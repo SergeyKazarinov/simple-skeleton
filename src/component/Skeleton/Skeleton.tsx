@@ -55,7 +55,14 @@ const Skeleton: FC<SkeletonProps> = ({
     borderRadius: circle ? '50%' : border,
     ...getCSSProperties({ backgroundColor, highlightColor, shadowColor, animationSpeed }),
   };
-  return <div className={`${s.skeleton} ${s[animation]} ${className}`} style={styles} {...otherProps} />;
+  return (
+    <div
+      data-testid="skeleton"
+      className={`${s.skeleton} ${s[animation]} ${className}`}
+      style={styles}
+      {...otherProps}
+    />
+  );
 };
 
 export default memo(Skeleton);
